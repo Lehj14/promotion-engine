@@ -2,9 +2,9 @@
 
 namespace App\Tests\unit;
 
-use App\Controller\Filter\LowestPriceFilter;
 use App\DTO\LowestPriceEnquiryDTO;
 use App\Entity\Promotion;
+use App\Filter\LowestPriceFilter;
 use App\Tests\ServiceTestCase;
 
 class LowestPriceFilterTest extends ServiceTestCase

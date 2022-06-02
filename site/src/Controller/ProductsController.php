@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Controller\Filter\PromotionFilterInterface;
 use App\DTO\LowestPriceEnquiryDTO;
+use App\Filter\PromotionFilterInterface;
 use App\Repository\ProductRepository;
 use App\Repository\PromotionRepository;
 use App\Service\Serializer\DTOSerializer;
@@ -39,7 +39,7 @@ class ProductsController extends AbstractController
         /** @var LowestPriceEnquiryDTO $lowestPrinceEnquiry */
         $lowestPrinceEnquiry = $serializer->deserialize($request->getContent(), LowestPriceEnquiryDTO::class, 'json');
 
-        $products = $this->productRepository->find(['id' => $id]);
+        $products = $this->productRepository->find(['id' => $id]); //add check here later when there is no prod
         $lowestPrinceEnquiry->setProduct($products);
 
         $promotions = $this->promotionRepository->findValidForProducts(

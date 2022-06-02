@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller\Filter;
+namespace App\Filter;
 
 use App\DTO\PromotionEnquiryInterface;
 use App\Entity\Promotion;
